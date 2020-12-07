@@ -2,11 +2,35 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Attach by Process ID",
+      "processId": "${command:PickProcess}",
+      "request": "attach",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node",
+      "sourceMaps": true,
+      "smartStep": true,
+      "internalConsoleOptions": "openOnSessionStart",
+      "outFiles": ["${workspaceRoot}/dist/**/*.js"]
+    },
+    {
       "type": "node",
       "request": "launch",
       "name": "Launch NestJs",
       "runtimeArgs": ["-r", "ts-node/register"],
       "args": ["${workspaceFolder}/src/main.ts"]
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach to Remote",
+      "port": 9229,
+      "localRoot": "${workspaceRoot}",
+      "remoteRoot": "/src",
+      "sourceMaps": true,
+      "smartStep": true,
+      "internalConsoleOptions": "openOnSessionStart",
+      "trace": "sm",
+      "outFiles": ["${workspaceRoot}/dist/**/*.js"]
     }
   ]
 }
