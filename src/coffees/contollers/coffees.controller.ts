@@ -10,8 +10,7 @@ import {
   Delete,
   Query,
 } from '@nestjs/common';
-import { CreateCoffeeDto } from '../dto/create-coffee.dto';
-import { UpdateCoffeeDto } from '../dto/update-coffee.dto';
+import { CreateCoffeeDto, UpdateCoffeeDto } from '../dto';
 import { CoffeesService } from '../services/coffees.service';
 
 @Controller('coffees')
