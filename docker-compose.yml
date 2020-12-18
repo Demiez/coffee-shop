@@ -8,3 +8,8 @@ services:
       - '5432:5432'
     environment:
       POSTGRES_PASSWORD: password12345
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+
+volumes:
+  postgres-db:
